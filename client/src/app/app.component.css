@@ -1,0 +1,26 @@
+#outer-container {
+	display: table;
+	width: 98%;
+	height: 100%;
+}
+
+#sidebar {
+	display: table-cell;
+	width: 10%;
+	vertical-align: top;
+}
+
+#footer {
+    position:absolute;
+    bottom:5;
+    width:100%;
+    height:10vh;   /* Height of the footer */
+}
+
+body{
+	background: #343f4f;
+	min-height: 75vh;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+}

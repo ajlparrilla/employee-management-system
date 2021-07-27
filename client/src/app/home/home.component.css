@@ -1,0 +1,34 @@
+.content {
+	position: relative;
+	background: #343f4f;
+	display: grid;
+	margin-top: 10;
+	align-items: center;
+	justify-content:inherit
+}
+
+.content h2{
+	position:absolute;
+	transform: translate(-50%, -50%);
+	color: #fff;
+	font-size: 5em;
+}
+
+.content h2:nth-child(1){
+	color: transparent;
+	-webkit-text-stroke: 2px #03a9f4 ;
+}
+
+.content h2:nth-child(2){
+	color: #03a9f4;
+	animation: animate 3s ease-in-out infinite;
+}
+
+@keyframes animate{
+	0%, 100%{
+		clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+	}
+	50%{
+		clip-path: polygon(100% 0%, 100% 75%, 0% 100%, 0% 25%);
+	}
+}
