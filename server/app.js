@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const connect = require('mongoose');
 
 var administratorRouter = require('./routes/administrator');
 var staffRouter = require('./routes/staff');
@@ -17,7 +18,7 @@ app.use(cors({
 
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/employee-manager', { useUnifiedTopology: true, useNewUrlParser: true})
+mongoose.connect('mongodb+srv://ajlparrilla:asus03221998@cluster0.xwx2c.mongodb.net/employee-manager?retryWrites=true&w=majority', { useUnifiedTopology: true, useNewUrlParser: true})
 
 //passport
 var passport = require('passport')

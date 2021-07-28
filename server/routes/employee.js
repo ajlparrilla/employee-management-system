@@ -10,26 +10,26 @@ var passport = require('passport')
 //   res.send('respond with a resource');
 // });
 
-// router.post('/register', function (req, res, next){
-//   addtoDB(req, res);
-// })
+router.post('/register', function (req, res, next){
+  addtoDB(req, res);
+})
 
-// async function addtoDB (req, res){
-//   var administrator = new Administrator({
-//     fullname: req.body.fullname,
-//     position: req.body.position,
-//     username: req.body.username,
-//     password: Administrator.hashPassword(req.body.password)
-//   })
+async function addtoDB (req, res){
+  var administrator = new Administrator({
+    fullname: req.body.fullname,
+    position: req.body.position,
+    username: req.body.username,
+    password: Administrator.hashPassword(req.body.password)
+  })
 
-//   try{
-//     doc = administrator.save();
-//     return res.status(201).json(doc);
-//   }
-//   catch(err){
-//     return res.status(501).json(err)
-//   }
-// }
+  try{
+    doc = administrator.save();
+    return res.status(201).json(doc);
+  }
+  catch(err){
+    return res.status(501).json(err)
+  }
+}
 
 router.post('/login', function (req, res, next){
   passport.authenticate('local-employee', function(err, employee, info) {
