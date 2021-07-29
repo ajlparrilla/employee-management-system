@@ -8,6 +8,7 @@ const connect = require('mongoose');
 var administratorRouter = require('./routes/administrator');
 var staffRouter = require('./routes/staff');
 var employeeRouter = require('./routes/employee');
+var indexRouter = require('./routes/index')
 var cors = require('cors')
 var app = express();
 
@@ -52,6 +53,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(indexRouter);
 app.use('/administrator', administratorRouter);
 app.use('/staff', staffRouter);
 app.use('/employee', employeeRouter);
