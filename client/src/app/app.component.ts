@@ -16,19 +16,19 @@ export class AppComponent {
   constructor(private http:HttpClient, private _router:Router, public _administratorService: AdministratorService, public administratorPageService:AdministratorPageService) { }
   
   getStaff(){
-    return this.http.get(`http://localhost:3000/administrator/page`)
+    return this.http.get(`http://35.240.224.193:8080/administrator/page`)
   }
 
   postStaff(staff: AdministratorPage){
-    return this.http.post(`http://localhost:3000/administrator/page`, staff)
+    return this.http.post(`http://35.240.224.193:8080/administrator/page`, staff)
   }
 
   putStaff(staff: AdministratorPage){
-    return this.http.put(`http://localhost:3000/administrator/page/${staff._id}`, staff)
+    return this.http.put(`http://35.240.224.193:8080/administrator/page/${staff._id}`, staff)
   }
 
   deleteStaff(_id:string){
-    return this.http.get(`http://localhost:3000/administrator/page/${_id}`)
+    return this.http.get(`http://35.240.224.193:8080/administrator/page/${_id}`)
   }
 
   ngOnInit() {
